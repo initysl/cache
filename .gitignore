@@ -1,0 +1,42 @@
+# dependencies
+/client/node_modules
+# next.js
+/client/.next/
+client/out/
+# production
+client/build
+# debug
+client/npm-debug.log*
+# vercel
+client/.vercel
+# typescript
+client/*.tsbuildinfo
+client/next-env.d.ts
+
+
+# Python
+server/app/*__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+server/.env
+server/.venv/
+server/build/
+server/dist/
+server/chroma_db
+server/*.txt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Database
+server/*.db
+server/*.sqlite
+# Docker
+.dockerignore
+# Testing
+server/.pytest_cache/

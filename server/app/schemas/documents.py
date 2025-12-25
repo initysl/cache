@@ -15,3 +15,4 @@ class DeleteBatchRequest(BaseModel):
 
 class StatsResponse(BaseModel):
     total_documents: int
+

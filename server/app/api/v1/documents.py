@@ -78,7 +78,7 @@ def delete_documents_batch(payload: DeleteBatchRequest):
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
-@router.get("/stats/count", response_model=StatsResponse)
+@router.get("/stats", response_model=StatsResponse)
 def get_stats():
     try:
         logger.info("Stats request received")

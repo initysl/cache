@@ -10,7 +10,9 @@ import {
   Search,
   FileText,
   Check,
+  ArrowRightCircleIcon,
 } from 'lucide-react';
+import { GrGoogle } from 'react-icons/gr';
 
 const features = [
   {
@@ -80,7 +82,9 @@ const features = [
       'Powered by state-of-the-art AI embeddings, VectorSnap delivers lightning-fast semantic search results.',
   },
 ];
-
+const googleSignIn = () => {
+  alert('Signing in.....');
+};
 export default function LandingPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -144,7 +148,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className='text-3xl sm:text-4xl text-zinc-900 mb-4 cherry'
+                className='text-3xl sm:text-4xl font-bold text-zinc-900 mb-4 cherry'
               >
                 {feature.title}
               </motion.h2>
@@ -160,16 +164,31 @@ export default function LandingPage() {
             </div>
           </motion.div>
         </AnimatePresence>
-
         {/* Buttons */}
-        <div className='flex flex-col gap-6 mt-10'>
+
+        <motion.div
+          className='flex flex-col gap-6 mt-10'
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.35 }}
+        >
           {/* Button (never animated) */}
           <button
             onClick={nextSlide}
-            className='exo max-w-52 px-10 py-3 rounded-2xl bg-linear-to-r from-blue-600 to-zinc-600 text-white shadow-lg  hover:from-zinc-600 hover:to-blue-600 hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-500 ease-[0.22,1,0.36,1]
+            className='exo w-fit px-10 py-3 cursor-pointer rounded-2xl bg-linear-to-r from-blue-600 to-zinc-600 text-white shadow-lg  hover:from-zinc-600 hover:to-blue-600 hover:shadow-2xl hover:translate-x-0.5 active:translate-y-0 transition-all duration-500 ease-in-out
 '
           >
-            {isLast ? 'Get Started' : 'Continue'}
+            {isLast ? (
+              <div
+                className='flex gap-3 items-center justify-center'
+                onClick={googleSignIn}
+              >
+                <GrGoogle /> Sign in
+              </div>
+            ) : (
+              <ArrowRightCircleIcon />
+            )}
           </button>
 
           {/* Progress Dots (static) */}
@@ -186,7 +205,7 @@ export default function LandingPage() {
               />
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

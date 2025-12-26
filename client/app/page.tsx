@@ -1,4 +1,5 @@
 'use client';
+
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -16,12 +17,12 @@ const features = [
     id: 1,
     icon: (
       <div className='bg-white rounded-2xl p-4 shadow-md hover:shadow-lg transition-shadow flex flex-col items-center justify-center'>
-        <FileText className='text-green-500' size={22} strokeWidth={2} />
+        <FileText className='text-blue-500' size={22} strokeWidth={2} />
       </div>
     ),
     title: 'Welcome to Vectorsnap',
     description:
-      'VectorSnap is a powerful semantic search engine that turns your documents into searchable knowledge using AI embeddings.',
+      'A semantic search engine that turns your documents into searchable knowledge using AI embeddings.',
   },
   {
     id: 2,
@@ -65,7 +66,7 @@ const features = [
     ],
     title: 'Organize Everything',
     description:
-      'Store notes, articles, recipes, and research. VectorSnap organizes your knowledge base automatically.',
+      'Store notes, articles, recipes, and research. Vectorsnap organizes your knowledge base automatically.',
   },
   {
     id: 4,
@@ -91,7 +92,7 @@ export default function LandingPage() {
   };
 
   return (
-    <div className='min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 flex items-center justify-center px-6'>
+    <div className='min-h-screen bg-linear-to-br from-slate-50 to-blue-50 flex items-center justify-center px-6'>
       <div className='w-full max-w-4xl flex flex-col gap-12'>
         {/* FEATURE AREA */}
         <AnimatePresence mode='wait'>
@@ -143,7 +144,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                className='text-3xl sm:text-4xl font-bold text-zinc-900 mb-4'
+                className='text-3xl sm:text-4xl text-zinc-900 mb-4 cherry'
               >
                 {feature.title}
               </motion.h2>
@@ -152,7 +153,7 @@ export default function LandingPage() {
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.08, duration: 0.4 }}
-                className='text-zinc-600 text-lg leading-relaxed max-w-xl'
+                className='text-zinc-600 text-lg leading-relaxed max-w-xl exo'
               >
                 {feature.description}
               </motion.p>
@@ -160,12 +161,13 @@ export default function LandingPage() {
           </motion.div>
         </AnimatePresence>
 
-        {/* FIXED ACTIONS */}
+        {/* Buttons */}
         <div className='flex flex-col gap-6 mt-10'>
           {/* Button (never animated) */}
           <button
             onClick={nextSlide}
-            className='w-52 px-10 py-3 rounded-2xl bg-gradient-to-r from-blue-600 to-zinc-600 text-white font-semibold hover:from-zinc-600 hover:to-blue-600 transition-all shadow-lg hover:shadow-xl'
+            className='exo max-w-52 px-10 py-3 rounded-2xl bg-linear-to-r from-blue-600 to-zinc-600 text-white shadow-lg  hover:from-zinc-600 hover:to-blue-600 hover:shadow-2xl hover:-translate-y-0.5 active:translate-y-0 transition-all duration-500 ease-[0.22,1,0.36,1]
+'
           >
             {isLast ? 'Get Started' : 'Continue'}
           </button>
@@ -178,7 +180,7 @@ export default function LandingPage() {
                 onClick={() => setCurrentSlide(i)}
                 className={`h-2 rounded-full transition-all ${
                   i === currentSlide
-                    ? 'w-8 bg-gradient-to-r from-blue-600 to-zinc-600'
+                    ? 'w-8 bg-linear-to-r from-blue-600 to-zinc-600'
                     : 'w-2 bg-zinc-300'
                 }`}
               />

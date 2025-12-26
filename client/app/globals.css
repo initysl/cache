@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
   --background: #ffffff;
@@ -23,4 +23,16 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.exo {
+  font-family: var(--font-exo-2);
+}
+
+.cherry {
+  font-family: var(--font-cherry-swash);
+}
+
+.sedgwick {
+  font-family: var(--font-sedgwick-ave-display);
 }

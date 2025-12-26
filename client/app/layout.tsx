@@ -1,5 +1,11 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
+import {
+  Geist,
+  Geist_Mono,
+  Exo_2,
+  Cherry_Swash,
+  Sedgwick_Ave_Display,
+} from 'next/font/google';
 import './globals.css';
 
 const geistSans = Geist({
@@ -9,6 +15,23 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: '--font-geist-mono',
+  subsets: ['latin'],
+});
+
+const exo2 = Exo_2({
+  variable: '--font-exo-2',
+  subsets: ['latin'],
+});
+
+const cherry = Cherry_Swash({
+  variable: '--font-cherry-swash',
+  weight: '400',
+  subsets: ['latin'],
+});
+
+const sedgwick = Sedgwick_Ave_Display({
+  variable: '--font-sedgwick-ave-display',
+  weight: '400',
   subsets: ['latin'],
 });
 
@@ -25,7 +48,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${cherry.variable} ${sedgwick.variable} ${exo2.variable} antialiased`}
       >
         {children}
       </body>

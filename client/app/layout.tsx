@@ -7,6 +7,7 @@ import {
   Sedgwick_Ave_Display,
 } from 'next/font/google';
 import './globals.css';
+import { Providers } from '@/components/providers';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -50,7 +51,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${cherry.variable} ${sedgwick.variable} ${exo2.variable} antialiased`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

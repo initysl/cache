@@ -11,7 +11,9 @@ export default function DashboardLayout({
       <div>
         <Profile />
       </div>
-      <main className='max-w-5xl'>{children}</main>
+      <main className='w-full max-w-5xl h-[calc(95vh-6rem)] overflow-y-auto p-5 mt-5 rounded-2xl'>
+        {children}
+      </main>
       <div>
         <Promptbar />
       </div>

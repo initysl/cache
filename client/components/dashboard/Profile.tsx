@@ -21,7 +21,7 @@ export default function ProfileCard() {
         transformStyle: 'preserve-3d',
         perspective: 1000,
       }}
-      className='flex items-center gap-4 bg-white rounded-2xl p-2 mt-5 shadow-lg hover:shadow-xl transition-shadow w-fit'
+      className='flex items-center gap-4 bg-white rounded-2xl p-2 mt-2 shadow-lg hover:shadow-xl transition-shadow w-fit'
     >
       {/* Avatar */}
       <motion.div
@@ -32,7 +32,7 @@ export default function ProfileCard() {
         }}
         className='relative'
       >
-        <div className='w-16 h-16 bg-linear-to-br from-teal-300 to-teal-400 rounded-3xl flex items-center justify-center shadow-md'>
+        <div className='w-10 h-10 bg-linear-to-br from-teal-300 to-teal-400 rounded-3xl flex items-center justify-center shadow-md'>
           <img
             src='https://api.dicebear.com/7.x/avataaars/svg?seed=Helen'
             alt='Helen Joe'
@@ -46,7 +46,7 @@ export default function ProfileCard() {
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
-          className='text-xl font-bold text-gray-900'
+          className='text-xl font-normal text-gray-900'
         >
           Helen Joe
         </motion.h2>

@@ -88,7 +88,15 @@ export default function Promptbar() {
 
   return (
     <nav className='z-50 px-4 exo'>
-      <div className='fixed bottom-5 left-0 right-0 mx-auto max-w-xl'>
+      <motion.div
+        className='fixed bottom-5 left-0 right-0 mx-auto max-w-xl'
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          duration: 0.6,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+      >
         <div className='relative flex items-center gap-2 rounded-full bg-white px-4 py-3 shadow-lg border border-gray-200 transition-all focus-within:border-blue-500 focus-within:shadow-blue-100 '>
           {' '}
           {open && filteredCommands.length > 0 && (
@@ -166,12 +174,7 @@ export default function Promptbar() {
             <Sparkles size={20} />
           </button>
         </div>
-
-        {/* Subtle hint */}
-        <p className='mt-2 text-center text-md text-gray-400'>
-          “retrieve your docs.....”
-        </p>
-      </div>
+      </motion.div>
     </nav>
   );
 }
